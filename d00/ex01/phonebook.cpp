@@ -28,58 +28,69 @@ class Contact
 
         void set_f_name()
         {
-            std::cout << "Enter contact's first name : ";
-            std::cin >> f_name;
+            std::cout << "Enter contact's first name : "<<std::endl;
+            std::cin.ignore();
+            std::getline(std::cin, f_name);
         }
         void set_l_name()
         {
             std::cout << "Enter contact's last name : ";
-            std::cin >> l_name;
+            std::cin.ignore();
+            std::getline(std::cin, l_name);
         }
         void set_n_name()
         {
             std::cout << "Enter contact's nickname : ";
-            std::cin >> n_name;
+            std::cin.ignore();
+            std::getline(std::cin, n_name);
         }
         void set_login()
         {
             std::cout << "Enter contact's login : ";
-            std::cin >> login;
+            std::cin.ignore();
+            std::getline(std::cin, login);
         }
         void set_address()
         {
             std::cout << "Enter contact's postal address : ";
-            std::cin >> address;
+            std::cin.ignore();
+            std::getline(std::cin, address);
         }
         void set_email()
         {
             std::cout << "Enter contact's email : ";
-            std::cin >> email;
+            std::cin.ignore();
+            std::getline(std::cin, email);
         }
         void set_phone()
         {
             std::cout << "Enter contact's phone : ";
-            std::cin >> phone;
+            std::cin.ignore();
+            std::getline(std::cin, phone);
         }
         void set_birth_date()
         {
             std::cout << "Enter contact's birthday date : ";
-            std::cin >> birth_date;
+            std::cin.ignore();
+            std::getline(std::cin, birth_date);
         }
         void set_fav_meal()
         {
             std::cout << "Enter contact's favorite meal : ";
-            std::cin >> fav_meal;
+            std::cin.ignore();
+            std::getline(std::cin, fav_meal);
         }
         void set_underwear_color()
         {
             std::cout << "Enter contact's underwear color : ";
-            std::cin >> underwear_color;
+            std::cin.ignore();
+            std::getline(std::cin, underwear_color);
         }
         void set_darkest_secret()
         {
             std::cout << "Enter contact's darkest secret : ";
-            std::cin >> darkest_secret;
+            std::cin.ignore();
+            std::getline(std::cin, darkest_secret);
         }
         
         void set_info()
