@@ -29,7 +29,7 @@ class Contact
         void set_f_name()
         {
             std::cout << "Enter contact's first name : "<<std::endl;
-            std::cin.ignore();
+            //std::cin.ignore();
             std::getline(std::cin, f_name);
         }
         void set_l_name()
@@ -96,8 +96,8 @@ class Contact
         void set_info()
         {
             set_f_name();
-            // set_l_name();
-            // set_n_name();
+            set_l_name();
+            set_n_name();
             // set_login();
             // set_address();
             // set_email();
@@ -203,7 +203,7 @@ int main(int argc, char **argv)
     int n_contacts = 0;
     while (cmd != "EXIT")
     {
-        std::cin >> cmd;
+        std::getline(std::cin, cmd);
         if (cmd == "ADD")
         {
             if (n_contacts == 8)
