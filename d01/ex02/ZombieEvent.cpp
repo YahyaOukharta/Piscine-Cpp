@@ -30,19 +30,32 @@ Zombie *ZombieEvent::randomChump(void)
 
  return (z);
 }
-static int c;
-int randVal(int range)
+
+unsigned int hash(unsigned long long state, int range)
 {
-    std::srand(std::time(nullptr) + (c++) * 50);
-    return (std::rand() / ((RAND_MAX + 1u) / range));
+    state %= 0xFFFFFFFF;
+    state ^= 2747636419u;
+    state *= 2654435769u;
+    state ^= state >> 16;
+    state *= 2654435769u;
+    state ^= state >> 16;
+    state *= 2654435769u;
+    state %= 0xFFFFFFFF;
+
+    return (((double)state / 4294967295.0) * (double)range);
 }
+
+static int c = SEED;
 
 std::string ZombieEvent::randomString(int len)
 {
     std::string rand = "";
     for (int i = 0; i < len; i++)
     {
-        rand += randVal('z'-'a') + 'a'; 
+        unsigned int val = hash(c, 'z'-'a');
+        rand += val + 'a'; 
+        c++;
     }
+   
     return rand;
 }

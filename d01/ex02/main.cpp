@@ -4,7 +4,7 @@ int main(int argc, char **argv)
 {
     Zombie *z = new Zombie("hmed", "A7-0.2");
 
-    //z->announce();
+    z->announce();
 
     delete z;
 
@@ -12,8 +12,10 @@ int main(int argc, char **argv)
 
     ZombieEvent *Z = new ZombieEvent();
 
+    Z->setZombieType("v1-1.4.6");
+
     z = Z->newZombie("abfr");
-    //z->announce();
+    z->announce();
 
     delete z;
 
