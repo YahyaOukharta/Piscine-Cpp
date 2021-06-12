@@ -2,13 +2,13 @@
 
 void ponyOnTheStack()
 {
-    Pony stack("Stack Boy",10,20);
+    Pony stack("Stack Boy", 10, 20);
     stack.put_details();
 }
 
 void ponyOnTheHeap()
 {
-    Pony *heap = new Pony("Heap Boy",15,30);
+    Pony *heap = new Pony("Heap Boy", 15, 30);
     heap->put_details();
     delete heap;
 }
