@@ -1,6 +1,6 @@
 NAME = a.out
 
-SRCS = main.cpp Zombie.cpp ZombieHorde.cpp
+SRCS = main.cpp 
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -10,7 +10,7 @@ $(NAME) :
 	clang++ -o $(NAME) $(FLAGS) $(SRCS) 
 
 clean :
-	rm -f Zombie.hpp.gch
+
 
 fclean : clean
 	rm -f a.out
