@@ -32,5 +32,5 @@ void        Zombie::setType(std::string t)
 
 void        Zombie::announce(void)
 {
-    std::cout << "<" << this->name << " (" << (this->type == "" ? "unknown" : this->type) << ")> Braiiiiiiiiiiiinnssss..." << std::endl;
+    std::cout << "<" << this->name << " (" << (this->type == "" ? "unknown" : this->type) << ")> BraiiiiiiinnnzzzZ..." << std::endl;
 }
