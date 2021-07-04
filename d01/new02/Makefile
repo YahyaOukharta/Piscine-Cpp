@@ -13,6 +13,6 @@ clean :
 
 
 fclean : clean
-	rm -f a.out
+	rm -f $(NAME)
 
 re : fclean all

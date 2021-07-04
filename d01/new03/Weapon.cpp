@@ -2,7 +2,7 @@
 
 Weapon::Weapon(void)
 {
-
+    this->setType("");
 }
 
 Weapon::Weapon(std::string t)

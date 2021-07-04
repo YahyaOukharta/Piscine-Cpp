@@ -1,6 +1,6 @@
-NAME = a.out
+NAME = replace
 
-SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS = main.cpp
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -10,7 +10,8 @@ $(NAME) :
 	clang++ -o $(NAME) $(FLAGS) $(SRCS) 
 
 clean :
-	rm -f Zombie.hpp.gch
+	rm -f *.hpp.gch
+	rm -f *.replace
 
 fclean : clean
 	rm -f $(NAME)

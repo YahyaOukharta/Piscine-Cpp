@@ -1,11 +1,13 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(void) : weapon(Weapon())
+Weapon def = Weapon("hand");
+
+HumanB::HumanB(void) : weapon(def)
 {
 
 }
 
-HumanB::HumanB(std::string n)
+HumanB::HumanB(std::string n) : weapon(def)
 {
     this->setName(n);
 }
