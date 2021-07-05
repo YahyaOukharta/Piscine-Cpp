@@ -44,5 +44,9 @@ void    Karen::error(void)
 
 void    Karen::complain(std::string level)
 {
-    loglevels[index_of_level(this->levels, level)]();
+    int idx = index_of_level(this->levels, level);
+    if (idx >= 0)
+        loglevels[idx]();
+    else
+        std::cout << "INCORRECT LOG LEVEL '" << level << "'" << std::endl;
 }
