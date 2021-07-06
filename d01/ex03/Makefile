@@ -2,7 +2,7 @@ NAME = a.out
 
 SRCS = HumanA.cpp HumanB.cpp Weapon.cpp	main.cpp
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 

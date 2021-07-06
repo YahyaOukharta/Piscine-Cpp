@@ -11,12 +11,20 @@ class Fixed
     public :
         Fixed(void);
         Fixed(Fixed &n);
+
+        Fixed(const int     n);
+        Fixed(const float   n);
+
         ~Fixed(void);
 
-        int getRawBits(void) const;
-        void setRawBits(int const raw);
+        int     getRawBits(void) const;
+        void    setRawBits(int const raw);
 
-        void operator = (const Fixed &n);
+        float   toFloat(void) const;
+        int     toInt(void) const;
+
+        void    operator =  (const Fixed &n);
+        ostream &operator << (ostream &os, const Fixed &n);
 };
 
 #endif

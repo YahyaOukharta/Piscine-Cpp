@@ -2,7 +2,7 @@ NAME = a.out
 
 SRCS = main.cpp 
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 

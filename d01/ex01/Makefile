@@ -2,7 +2,7 @@ NAME = a.out
 
 SRCS = main.cpp Zombie.cpp ZombieHorde.cpp
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 

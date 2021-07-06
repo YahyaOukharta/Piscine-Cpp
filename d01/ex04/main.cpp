@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: youkhart <youkhart@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/06 16:27:02 by youkhart          #+#    #+#             */
+/*   Updated: 2021/07/06 16:27:26 by youkhart         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -9,7 +21,7 @@ int print_error(int err)
     if (err == 1)
         std::cout << "Error : replace : string_to_replace and string_to_replace_with shouldn't be empty strings" << std::endl;
     if (err == 2)
-        std::cout << "Error : replace : invalid filename" << std::endl;
+        std::cout << "Error : replace : unable to open provided filename" << std::endl;
     
     return (1);
 }
