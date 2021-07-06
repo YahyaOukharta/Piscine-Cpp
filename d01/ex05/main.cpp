@@ -1,11 +1,18 @@
-#include "Human.hpp"
-#include <iostream>
+#include "Karen.hpp"
 
-int main(int argc, char **argv)
+int main(int ac, char **av)
 {
-    Human bob;
+    (void)ac;
+    (void)av;
 
-    std::cout << bob.identify() << std::endl;
-    std::cout << bob.getBrain().identify() << std::endl;
-    
+    Karen k;
+
+    k.complain("debug");
+    k.complain("info");
+    k.complain("warning");
+    k.complain("error");
+
+    k.complain("sldkfjs");
+
+    return (0);
 }
