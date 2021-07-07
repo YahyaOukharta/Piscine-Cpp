@@ -1,6 +1,7 @@
 #ifndef __FIXED_HPP__
 # define __FIXED_HPP__
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -10,7 +11,7 @@ class Fixed
 
     public :
         Fixed(void);
-        Fixed(Fixed &n);
+        Fixed(Fixed const &n) ;
 
         Fixed(const int     n);
         Fixed(const float   n);
@@ -24,7 +25,8 @@ class Fixed
         int     toInt(void) const;
 
         void    operator =  (const Fixed &n);
-        ostream &operator << (ostream &os, const Fixed &n);
 };
+
+std::ostream &operator<<(std::ostream &os, const Fixed &n);
 
 #endif
