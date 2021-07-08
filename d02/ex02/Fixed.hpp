@@ -25,6 +25,12 @@ class Fixed
         int     toInt(void) const;
 
         void    operator =  (const Fixed &n);
+
+        Fixed   operator ++ ();    //prefix
+        Fixed   operator -- ();    //prefix
+        Fixed   operator ++ (int); //postfix
+        Fixed   operator -- (int); //postfix
+
         static Fixed &min(Fixed &f1, Fixed &f2);
         static Fixed &max(Fixed &f1, Fixed &f2);
         static Fixed const &min(Fixed const &f1, Fixed const &f2);

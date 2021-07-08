@@ -154,3 +154,32 @@ Fixed   const &Fixed::max(Fixed const &f1, Fixed const &f2)
     else
         return (f2);
 }
+
+// Increment / decrement
+
+    //postfix
+Fixed   Fixed::operator ++ (int) 
+{
+    Fixed tmp = Fixed(this->toFloat());
+    this->setRawBits(this->getRawBits() + 1);
+    return (tmp);
+}
+
+Fixed   Fixed::operator -- (int) 
+{
+    Fixed tmp = Fixed(this->toFloat());
+    this->setRawBits(this->getRawBits() - 1);
+    return (tmp);
+}
+    //prefix
+Fixed   Fixed::operator ++ () 
+{
+    this->setRawBits(this->getRawBits() + 1);
+    return (*this);
+}
+
+Fixed   Fixed::operator -- () 
+{
+    this->setRawBits(this->getRawBits() - 1);
+    return (*this);
+}
