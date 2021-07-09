@@ -3,13 +3,12 @@
 
 int main(void)
 {
-    Point a(0.15, 1156);
-    Point b(11256, 12.2);
+    Point a(0,0);
+    Point b(0,10);
+    Point c(10,0);
+    Point d(8.1,0);
 
-    std::cout << a.getX() << " "<< a.getY() << std::endl;
-    a = b;
-    std::cout << b.getX() << " "<< b.getY() << std::endl;
-    std::cout << a.getX() << " "<< a.getY() << std::endl;
 
+    bsp(a,b,c,d);
     return 0;
 }

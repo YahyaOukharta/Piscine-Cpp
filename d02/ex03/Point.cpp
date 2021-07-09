@@ -2,10 +2,10 @@
 
 Point::Point(void) : x(Fixed(0)),y(Fixed(0))
 {
-    ptr = &x;
+
 }
 
-Point::Point(Point &p) : x(Fixed(p.getX())),y(Fixed(p.getY()))
+Point::Point(Point const &p) : x(Fixed(p.getX())),y(Fixed(p.getY()))
 {
 
 }
@@ -22,9 +22,10 @@ Point::~Point(void)
 
 void Point::operator = (const Point &p)
 {
-    // ((Fixed)this->x).setRawBits(p.getX().getRawBits());
-    // ((Fixed)this->y).setRawBits(p.getY().getRawBits());
-    x->setRawBits( p.getX());
+    Fixed &_x = const_cast<Fixed &>(x);
+    Fixed &_y = const_cast<Fixed &>(y);
+    _x.setRawBits( p.getX().getRawBits());
+    _y.setRawBits( p.getY().getRawBits());
 }
 
 Fixed Point::getX(void) const

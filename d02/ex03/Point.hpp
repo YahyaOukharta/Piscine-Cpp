@@ -7,11 +7,11 @@ class Point
     private:
         Fixed const x;
         Fixed const y;
-        Fixed *ptr;
+
     public:
 
         Point(void);
-        Point(Point &p);
+        Point(Point const &p);
         Point(float const x, float const y);
         ~Point(void);
 
@@ -21,5 +21,7 @@ class Point
         Fixed getY(void) const;
  
 };
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
