@@ -85,7 +85,6 @@ int ClapTrap::getAD(void) const
     return (attack_damage);
 
 }
-
 void ClapTrap::displayStats(void)
 {
     std::cout << "Trap at " << (void *)this << " :" << std::endl;
