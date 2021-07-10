@@ -4,29 +4,17 @@ int main(int ac, char **av)
     (void)ac;
     (void)av;
 
-    // ClapTrap c("TEST");
-    // c.attack("Enemey1.02");
-    // c.takeDamage(6);
-    // c.beRepaired(2);
-    // c.beRepaired(2);
-    // c.beRepaired(2);
-    // c.takeDamage(120);
-    // c.attack("Enemey1.02");
+    DiamondTrap d("diamond_test");
 
-    // ScavTrap s("SCAV");
-    
-    // s.attack("Targe");
-    // s.attack("TARGEET");
-
-    // s.guardGate();
-
-    // FragTrap f("Fraggie");
-
-    // f.highFivesGuys();
-    // f.displayStats();
-
-    DiamondTrap d("ddddd");
-
+    d.whoAmI();
     d.displayStats();
+    d.attack("enemy123");
+    d.highFivesGuys();
+    d.guardGate();
     return (0);
 }
+
+//clap (10,10,0) 
+//scav (100,50,20)
+//frag (100,100,30)
+//diamond (100,50, 30)
