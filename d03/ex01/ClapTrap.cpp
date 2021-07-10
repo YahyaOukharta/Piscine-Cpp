@@ -6,7 +6,7 @@ ClapTrap::ClapTrap(void)
     hit_points = 10;
     energy_points = 10;
     attack_damage = 0;
-    std::cout << "ClapTrap " << name << " was contructed !" << std::endl;
+    std::cout << "ClapTrap <" << name << "> was contructed !" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string _name)
@@ -15,7 +15,7 @@ ClapTrap::ClapTrap(std::string _name)
     hit_points = 10;
     energy_points = 10;
     attack_damage = 0;
-    std::cout << "ClapTrap " << name << " was contructed !" << std::endl;
+    std::cout << "ClapTrap <" << name << "> was contructed !" << std::endl;
 }
 
 
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap(ClapTrap const &trap)
     hit_points = trap.hit_points;
     energy_points = trap.energy_points;
     attack_damage = trap.attack_damage;
-    std::cout << "ClapTrap " << name << " was copied !" << std::endl;
+    std::cout << "ClapTrap <" << name << "> was copied !" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
@@ -56,4 +56,32 @@ void ClapTrap::beRepaired(unsigned int amount)
                 << "> was repaired, gaining <" << amount
                 << "> points of damage, leaving it with <" << hit_points
                 << "> !" << std::endl;
+}
+
+void ClapTrap::setTrapStats(int _hp, int _ep, int _ad)
+{
+    hit_points = _hp;
+    energy_points = _ep;
+    attack_damage = _ad;
+}
+
+std::string ClapTrap::getName(void) const 
+{
+    return(name);
+}
+
+int ClapTrap::getHP(void) const 
+{
+    return (hit_points);
+}
+
+int ClapTrap::getEP(void) const
+{
+    return (energy_points);
+}
+
+int ClapTrap::getAD(void) const
+{
+    return (attack_damage);
+
 }

@@ -1,33 +1,38 @@
 #include "ScavTrap.hpp"
 
-ScavTrap:ScavTrap(void)
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
-    name = "";
-    hit_points = 100;
-    energy_points = 50;
-    attack_damage = 20;
-    std::cout << "ScavTrap <" << name << "> was contructed !" << std::endl;
+    setTrapStats(100,50,20);
+    std::cout << "ScavTrap <" << getName() << "> was contructed !" << std::endl;
 }
 
-ScavTrap:ScavTrap(std::string _name)
+ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
 {
-    name = _name;
-    hit_points = 100;
-    energy_points = 50;
-    attack_damage = 20;
-    std::cout << "ScavTrap <" << name << "> was contructed !" << std::endl;
+    setTrapStats(100,50,20);
+    std::cout << "ScavTrap <" << getName() << "> was contructed !" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &trap)
+ScavTrap::ScavTrap(ScavTrap const &trap) : ClapTrap(trap.getName())
 {
-    name = trap.name;
-    hit_points = trap.hit_points;
-    energy_points = trap.energy_points;
-    attack_damage = trap.attack_damage;
-    std::cout << "ScavTrap <" << name << "> was copied !" << std::endl;
+    setTrapStats(100,50,20);
+    std::cout << "ScavTrap <" << getName() << "> was copied !" << std::endl;
 }
 
-ScavTrap::guardGate(void)
+ScavTrap::~ScavTrap(void)
 {
+    std::cout << "RIP ScavTrap <" << getName() << ">" << std::endl;
+}
 
+void    ScavTrap::attack(std::string target)
+{
+    std::cout   << "ScavTrap <" << getName() 
+                << "> attacks <" << target 
+                << ">, causing <" << getAD()
+                << "> points of damage!" << std::endl;
+}
+
+void    ScavTrap::guardGate(void)
+{
+        std::cout   << "ScavTrap <" << getName() 
+                << "> enters Gate Keeper Mode" << std::endl;
 }

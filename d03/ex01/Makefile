@@ -1,6 +1,6 @@
 NAME = a.out
 
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 FLAGS = -Wall -Wextra -Werror
 
