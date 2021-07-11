@@ -36,3 +36,11 @@ void    ScavTrap::guardGate(void)
         std::cout   << "ScavTrap <" << getName() 
                 << "> enters Gate Keeper Mode" << std::endl;
 }
+
+
+ScavTrap &ScavTrap::operator = (ScavTrap &t)
+{
+    this->setTrapName(t.getName());
+    this->setTrapStats(t.getHP(), t.getEP(), t.getAD());
+    return (*this);
+}

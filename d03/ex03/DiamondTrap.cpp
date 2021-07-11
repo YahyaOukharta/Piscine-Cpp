@@ -9,7 +9,7 @@ DiamondTrap::DiamondTrap(void) : ScavTrap() , FragTrap()
 
 DiamondTrap::DiamondTrap(std::string _name) : ScavTrap(_name) , FragTrap(_name)
 {
-    ClapTrap::setName(_name + "_clap_name");
+    ClapTrap::setTrapName(_name + "_clap_name");
     this->name = _name;
     //setTrapStats(FragTrap::getHP(), ScavTrap::getEP(), FragTrap::getAD());
     setTrapStats(FragTrap::getHP(), 50, FragTrap::getAD());
@@ -18,7 +18,7 @@ DiamondTrap::DiamondTrap(std::string _name) : ScavTrap(_name) , FragTrap(_name)
 
 DiamondTrap::DiamondTrap(DiamondTrap const &trap) : ScavTrap(trap.getName()) , FragTrap(trap.getName())
 {
-    ClapTrap::setName(trap.getName() + "_clap_name");
+    ClapTrap::setTrapName(trap.getName() + "_clap_name");
     this->name = trap.getName();
     // setTrapStats(FragTrap::getHP(), ScavTrap::getEP(), FragTrap::getAD());
     setTrapStats(FragTrap::getHP(), 50, FragTrap::getAD());

@@ -23,8 +23,12 @@ int main(int ac, char **av)
     // s.guardGate();
 
     FragTrap f("Fraggie");
+    FragTrap e("123456");
 
     f.highFivesGuys();
     f.displayStats();
+
+    f = e;
+    f.highFivesGuys();
     return (0);
 }

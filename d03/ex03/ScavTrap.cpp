@@ -36,3 +36,12 @@ void    ScavTrap::guardGate(void)
         std::cout   << "ScavTrap <" << getName() 
                 << "> enters Gate Keeper Mode" << std::endl;
 }
+
+ScavTrap &ScavTrap::operator = (ScavTrap &t)
+{
+    this->setTrapName(t.getName());
+    this->setTrapStats(t.getHP(), t.getEP(), t.getAD());
+    return (*this);
+}
+
+//ssh-agent bash -c 'ssh-add ~/Desktop/id_rsa; git clone git@vogsphere-v2-bg.1337.ma:vogsphere/intra-uuid-08246f2a-3d05-429d-a4d8-ade1e49d32ab-3648286'

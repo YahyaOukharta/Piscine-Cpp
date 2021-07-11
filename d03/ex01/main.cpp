@@ -15,11 +15,14 @@ int main(int ac, char **av)
     // c.attack("Enemey1.02");
 
     ScavTrap s("SCAV");
+    ScavTrap f("ffffff");
     
     s.attack("Targe");
     s.attack("TARGEET");
 
     s.guardGate();
+    f = s;
 
+    f.attack("enemy");
     return (0);
 }

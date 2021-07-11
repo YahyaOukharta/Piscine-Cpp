@@ -28,3 +28,10 @@ void FragTrap::highFivesGuys(void)
     std::cout   << "FragTrap <" << getName() 
             << "> is requesting some high fives !!" << std::endl;
 }
+
+FragTrap &FragTrap::operator = (FragTrap &t)
+{
+    this->setTrapName(t.getName());
+    this->setTrapStats(t.getHP(), t.getEP(), t.getAD());
+    return (*this);
+}

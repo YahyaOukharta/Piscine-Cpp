@@ -65,12 +65,6 @@ void ClapTrap::setTrapStats(int _hp, int _ep, int _ad)
     attack_damage = _ad;
 }
 
-void ClapTrap::setName(std::string n)
-{
-    name = n;
-}
-
-
 std::string ClapTrap::getName(void) const 
 {
     return(name);
@@ -98,4 +92,16 @@ void ClapTrap::displayStats(void)
     std::cout << "\t HP   : " << hit_points << std::endl; 
     std::cout << "\t EP   : " << energy_points << std::endl; 
     std::cout << "\t AD   : " << attack_damage << std::endl; 
+}
+
+ClapTrap &ClapTrap::operator = (ClapTrap &t)
+{
+    this->setTrapName(t.getName());
+    this->setTrapStats(t.getHP(), t.getEP(), t.getAD());
+    return (*this);
+}
+
+void ClapTrap::setTrapName(std::string _name)
+{
+    name = _name;
 }

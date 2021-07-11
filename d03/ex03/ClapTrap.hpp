@@ -16,13 +16,15 @@ class ClapTrap
         ClapTrap(ClapTrap const &trap);
         ClapTrap(std::string name);
         ~ClapTrap(void);
-        
+        ClapTrap &operator = (ClapTrap &t);
+
         void attack(std::string const & target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
         
         void setTrapStats(int hp, int ep, int ad);
-        void setName(std::string n);
+        void setTrapName(std::string n);
+
         std::string getName(void) const;
         int getHP(void) const;
         int getEP(void) const;

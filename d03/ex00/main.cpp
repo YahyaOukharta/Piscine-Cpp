@@ -6,6 +6,8 @@ int main(int ac, char **av)
     (void)av;
 
     ClapTrap c("TEST");
+    ClapTrap f("alpha");
+
     c.attack("Enemey1.02");
     c.takeDamage(6);
     c.beRepaired(2);
@@ -13,5 +15,8 @@ int main(int ac, char **av)
     c.beRepaired(2);
     c.takeDamage(120);
     c.attack("Enemey1.02");
+
+    f = c;
+    f.attack("enemy");
     return (0);
 }

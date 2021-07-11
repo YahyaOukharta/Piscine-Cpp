@@ -40,6 +40,7 @@ void ClapTrap::attack(std::string const & target)
                 << ">, causing <" << attack_damage 
                 << "> points of damage!" << std::endl;
 }
+
 void ClapTrap::takeDamage(unsigned int amount)
 {
     hit_points -= amount;
@@ -56,4 +57,53 @@ void ClapTrap::beRepaired(unsigned int amount)
                 << "> was repaired, gaining <" << amount
                 << "> points of damage, leaving it with <" << hit_points
                 << "> !" << std::endl;
+}
+
+void ClapTrap::setTrapStats(int _hp, int _ep, int _ad)
+{
+    hit_points = _hp;
+    energy_points = _ep;
+    attack_damage = _ad;
+}
+
+void ClapTrap::setTrapName(std::string _name)
+{
+    name = _name;
+}
+
+std::string ClapTrap::getName(void) const 
+{
+    return(name);
+}
+
+int ClapTrap::getHP(void) const 
+{
+    return (hit_points);
+}
+
+int ClapTrap::getEP(void) const
+{
+    return (energy_points);
+}
+
+int ClapTrap::getAD(void) const
+{
+    return (attack_damage);
+
+}
+
+void ClapTrap::displayStats(void)
+{
+    std::cout << "Trap at " << (void *)this << " :" << std::endl;
+    std::cout << "\t Name : " << name << std::endl; 
+    std::cout << "\t HP   : " << hit_points << std::endl; 
+    std::cout << "\t EP   : " << energy_points << std::endl; 
+    std::cout << "\t AD   : " << attack_damage << std::endl; 
+}
+
+ClapTrap &ClapTrap::operator = (ClapTrap &t)
+{
+    this->setTrapName(t.getName());
+    this->setTrapStats(t.getHP(), t.getEP(), t.getAD());
+    return (*this);
 }
