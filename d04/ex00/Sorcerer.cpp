@@ -1,10 +1,5 @@
 #include "Sorcerer.hpp"
 
-Sorcerer::Sorcerer()
-{
-    
-}
-
 Sorcerer::Sorcerer(std::string _name, std::string _title)
 {
     name = _name;
@@ -37,6 +32,11 @@ std::string Sorcerer::getTitle(void)
 
 std::ostream &operator << (std::ostream &os, Sorcerer &s)
 {
-    os << "I am " << s.getName() << ", " << s.getTitle() << ", and I like ponies!";
+    os << "I am " << s.getName() << ", " << s.getTitle() << ", and I like ponies!" << std::endl;
     return (os);
+}
+
+void    Sorcerer::polymorph(Victim const &v) const
+{
+    v.getPolymorphed();
 }

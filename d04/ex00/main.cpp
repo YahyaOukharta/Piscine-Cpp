@@ -1,17 +1,18 @@
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
+#include "Peon.hpp"
 
-int main(int ac, char **av)
+int main()
 {
-    (void)ac;
-    (void)av;
+    Sorcerer robert("Robert", "the Magnificent");
 
-    Sorcerer s("Sorcius", "Mage");
-    std::cout << s << std::endl;
-
-    Victim v("Victor");
-
-    std::cout << v << std::endl;
+    Victim jim("Jimmy");
+    Peon joe("Joe");
     
-    return (0);
+    std::cout << robert << jim << joe;
+    
+    robert.polymorph(jim);
+    robert.polymorph(joe);
+    
+    return 0;
 }
