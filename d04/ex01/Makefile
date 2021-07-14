@@ -9,6 +9,7 @@ FLAGS = -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) :
+	alias clang++=g++
 	clang++ -o $(NAME) $(FLAGS) $(SRCS) 
 
 clean :
