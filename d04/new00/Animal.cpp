@@ -1,5 +1,5 @@
 #include "Animal.hpp"
-#include <iostream>
+
 Animal::Animal()
 {
     std::cout << "Birth of an animal, it has no type for now" << std::endl;
@@ -15,12 +15,12 @@ Animal::~Animal()
     std::cout << "RIP Animal (base class)" << (type == "" ? "" : " of type " + type) << std::endl;
 }
 
-std::string Animal::getType()
+std::string const Animal::getType() const
 {
     return (type);
 }
 
-void Animal::makeSound()
+void Animal::makeSound() const
 {
     std::cout << "A base animal has no sound, are you sure of what you are doing ?" << std::endl;
 }

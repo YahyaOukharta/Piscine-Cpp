@@ -1,6 +1,7 @@
 #ifndef __ANIMAL_HPP__
 # define __ANIMAL_HPP__
 # include <string>
+# include <iostream>
 
 class Animal
 {
@@ -12,8 +13,8 @@ class Animal
         Animal(std::string type);
         virtual ~Animal();
 
-        std::string getType();
-        virtual void makeSound();
+        std::string const getType() const;
+        virtual void makeSound() const;
 };
 
 #endif

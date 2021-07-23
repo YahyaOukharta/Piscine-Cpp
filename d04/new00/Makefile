@@ -1,6 +1,6 @@
 NAME = a.out
 
-SRCS = Animal.cpp  Cat.cpp  Dog.cpp  main.cpp
+SRCS = Animal.cpp  Cat.cpp  Dog.cpp  main.cpp WrongAnimal.cpp WrongCat.cpp
 
 FLAGS = -Wall -Wextra -Werror
 
