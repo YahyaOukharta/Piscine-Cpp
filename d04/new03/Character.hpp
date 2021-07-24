@@ -10,14 +10,20 @@ class Character : public ICharacter
 
         void    shift_inv(int idx);
         void    init_inv();
+
     public:
         Character(std::string const &name);
+        Character(const Character &c);
         ~Character();
 
         std::string const & getName() const;
         void equip(AMateria* m);
         void unequip(int idx);
         void use(int idx, ICharacter& target);
+
+        AMateria **get_inv() const;
+
+        Character &operator = (const Character & c)
 };
 
 #endif
