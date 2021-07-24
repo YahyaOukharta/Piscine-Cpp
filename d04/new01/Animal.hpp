@@ -2,7 +2,7 @@
 # define __ANIMAL_HPP__
 # include <string>
 # include <iostream>
-
+# include "Brain.hpp"
 class Animal
 {
     protected:
@@ -11,6 +11,8 @@ class Animal
     public:
         Animal();
         Animal(std::string type);
+        Animal(const Animal &a);
+
         virtual ~Animal();
 
         std::string const getType() const;

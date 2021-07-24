@@ -11,7 +11,6 @@ Cat::Cat(Cat const &c) : Animal("Cat")
     brain = new Brain();
     for(int i = 0; i < 100; i++)
         brain->ideas[i] = c.brain->ideas[i];
-
     std::cout << "A Cat was deep copied, meow" << std::endl;
 }
 
@@ -27,3 +26,7 @@ void Cat::makeSound() const
     std::cout << "MEOOWW =^._.^=" << std::endl;
 }
 
+Brain const *Cat::getBrain() const
+{
+    return brain;
+}

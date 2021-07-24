@@ -8,6 +8,7 @@ int main(int ac, char **av)
 {
     (void)ac;
     (void)av;
+
     // PlasmaRifle *r = new PlasmaRifle();
 
     // r->attack();

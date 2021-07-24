@@ -2,7 +2,7 @@ NAME = a.out
 
 SRCS = Animal.cpp  Cat.cpp  Dog.cpp  main.cpp Brain.cpp
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror # -fsanitize=address -g
 
 all : $(NAME)
 
