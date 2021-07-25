@@ -12,7 +12,7 @@ class Character : public ICharacter
         void    init_inv();
 
     public:
-        Character(std::string const &name);
+        Character(std::string const & name);
         Character(const Character &c);
         ~Character();
 
@@ -23,7 +23,7 @@ class Character : public ICharacter
 
         AMateria **get_inv() const;
 
-        Character &operator = (const Character & c)
+        Character &operator = (const Character & c);
 };
 
 #endif

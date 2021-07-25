@@ -5,7 +5,7 @@ Character::Character(std::string const &_name) : name(_name)
     init_inv();
 }
 
-Character::Character(const Character &c) : name(std::string(c.name))
+Character::Character(const Character &c) : name(c.name)
 {
     init_inv();
     int i = 0;
@@ -45,16 +45,19 @@ void    Character::init_inv()
 
 std::string const & Character::getName() const
 {
-    return name;
+    return ((std::string &)name);
 }
 
 void Character::equip(AMateria* m)
 {
+    if (!m) return;
     int i = 0;
     while (i < 4 && inventory[i] != 0)
         i++;
     if (i < 4)
-        inventory[i] = m;
+    {    inventory[i] = m;
+        std::cout << "equiped " << inventory[i]->getType() << " in slot " << i << std::endl;
+    }
 }
 
 void Character::unequip(int idx)
@@ -66,10 +69,24 @@ void Character::use(int idx, ICharacter& target)
 {
     if (idx < 0 || idx > 3 || !inventory[idx])
         return;
+    std::cout << "target : " << (std::string)(target.getName() )<< " item at index " << idx<< std::endl;
     inventory[idx]->use(target);
 }
 
 AMateria **Character::get_inv() const
 {
     return ((AMateria **)inventory);
+}
+
+Character &Character::operator = (const Character & c)
+{
+    init_inv();
+    int i = 0;
+    AMateria **inv = c.get_inv();
+    while (inv[i])
+    {
+        inventory[i] = inv[i]->clone();
+        i++;
+    }
+    return *this;
 }

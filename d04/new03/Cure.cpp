@@ -1,6 +1,8 @@
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("Cure")
+std::string curestr = "cure";
+
+Cure::Cure() : AMateria(curestr)
 {
 
 }

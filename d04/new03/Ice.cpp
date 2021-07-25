@@ -1,6 +1,6 @@
 #include "Ice.hpp"
-
-Ice::Ice() : AMateria("Ice")
+std::string icestr = "ice";
+Ice::Ice() : AMateria(icestr)
 {
 
 }

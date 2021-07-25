@@ -7,7 +7,7 @@ FLAGS = -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) :
-	g++ -o $(NAME) $(FLAGS) $(SRCS) 
+	clang++ -o $(NAME) $(FLAGS) $(SRCS) 
 
 clean :
 	rm -f *.hpp.gch
