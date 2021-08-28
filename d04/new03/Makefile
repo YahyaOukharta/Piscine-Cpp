@@ -2,7 +2,7 @@ NAME = a.out
 
 SRCS = AMateria.cpp Character.cpp MateriaSource.cpp Cure.cpp   Ice.cpp main.cpp
 
-FLAGS = -Wall -Wextra -Werror#  -fsanitize=address -g
+FLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 

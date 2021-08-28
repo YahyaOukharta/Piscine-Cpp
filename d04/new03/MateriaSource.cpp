@@ -27,9 +27,7 @@ void MateriaSource::learnMateria(AMateria *m)
     while (i < 4 && memory[i])
         i++;
     if (i < 4)
-    {
         memory[i] = m->clone();
-    }
 }
 
 AMateria *MateriaSource::createMateria(std::string const & type)

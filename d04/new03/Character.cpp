@@ -55,9 +55,7 @@ void Character::equip(AMateria* m)
     while (i < 4 && inventory[i] != 0)
         i++;
     if (i < 4)
-    {    inventory[i] = m;
-        std::cout << "equiped " << inventory[i]->getType() << " in slot " << i << std::endl;
-    }
+        inventory[i] = m;
 }
 
 void Character::unequip(int idx)
@@ -69,7 +67,6 @@ void Character::use(int idx, ICharacter& target)
 {
     if (idx < 0 || idx > 3 || !inventory[idx])
         return;
-    std::cout << "target : " << (std::string)(target.getName() )<< " item at index " << idx<< std::endl;
     inventory[idx]->use(target);
 }
 

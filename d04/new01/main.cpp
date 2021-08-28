@@ -21,15 +21,17 @@ int main(int ac, char **av)
     delete j;//should not create a leak
     delete i;
 
-    Animal *arr[100];
-    for (int i = 0; i < 100 ; i++)
+    int N = 10;
+
+    Animal *arr[N];
+    for (int i = 0; i < N ; i++)
     {
-        if(i < 50)
+        if(i < N / 2)
             arr[i] = new Dog();
         else
             arr[i] = new Cat();
     }
-    for (int i = 0; i < 100 ; i++)
+    for (int i = 0; i < N ; i++)
         delete arr[i];
 
     Cat a;
@@ -37,6 +39,5 @@ int main(int ac, char **av)
     std::cout << "Brain of cat A : " << address_to_hex((void *)a.getBrain()) << std::endl;
     std::cout << "Brain of cat B : " << address_to_hex((void *)b.getBrain()) << std::endl;
 
-    //system("leaks a.out");
     return (0);
 }
