@@ -9,15 +9,16 @@ class Animal
         std::string type;
         Animal();
         Animal(std::string type);
+        Animal(const Animal &a);
+        Animal &operator=(Animal const &a);
 
     public:
 
-        //Animal(const Animal &a);
-
         virtual ~Animal();
 
-        std::string const getType() const;
-        virtual void makeSound() const;
+        virtual std::string const getType() const = 0;
+        virtual void makeSound() const = 0;
+
 };
 
 #endif

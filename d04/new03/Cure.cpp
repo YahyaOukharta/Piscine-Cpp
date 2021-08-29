@@ -11,7 +11,15 @@ Cure::~Cure()
 {
     
 }
+Cure::Cure(Cure const &c) : AMateria(c.type)
+{
+}
 
+Cure &Cure::operator=(Cure const &c)
+{
+    (void)c;
+    return (*this);
+}
 AMateria* Cure::clone() const
 {
     return (new Cure());

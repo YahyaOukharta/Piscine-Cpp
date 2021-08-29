@@ -10,6 +10,11 @@ Animal::Animal(std::string _type) : type(_type)
     std::cout << "Birth of an animal of type '" << type << "'" << std::endl;
 }
 
+Animal::Animal(Animal const & a) : type(a.type)
+{
+    std::cout << "Copy of an animal of type '" << type << "'" << std::endl;
+}
+
 Animal::~Animal()
 {
     std::cout << "RIP Animal (base class)" << (type == "" ? "" : " of type " + type) << std::endl;
@@ -23,4 +28,10 @@ std::string const Animal::getType() const
 void Animal::makeSound() const
 {
     std::cout << "A base animal has no sound, are you sure of what you are doing ?" << std::endl;
+}
+
+Animal &Animal::operator=(Animal const &a)
+{   
+    type = a.type;
+    return (*this);
 }

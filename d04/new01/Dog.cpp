@@ -29,3 +29,13 @@ Brain const *Dog::getBrain() const
 {
     return brain;
 }
+
+
+Dog &Dog::operator=(Dog const &a)
+{   
+    type = a.type;
+    if(brain)
+        delete brain;
+    brain = new Brain(*(a.brain));
+    return (*this);
+}

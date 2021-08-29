@@ -14,7 +14,11 @@ class Cat : public Animal
         ~Cat(void);
 
         void makeSound() const;
+        std::string const getType() const;
+
         Brain const *getBrain() const;
+
+        Cat &operator=(Cat const &c);
 };
 
 #endif

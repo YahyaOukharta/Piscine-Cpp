@@ -29,3 +29,10 @@ void Animal::makeSound() const
 {
     std::cout << "A base animal has no sound, are you sure of what you are doing ?" << std::endl;
 }
+
+Animal &Animal::operator=(Animal const &a)
+{   
+    type = a.type;
+    return (*this);
+}
+

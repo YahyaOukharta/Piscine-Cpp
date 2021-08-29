@@ -10,9 +10,11 @@ class AMateria
 {
     protected:
         std::string const &type;
+        AMateria(std::string const & type);
+        AMateria(AMateria const & m);
+        AMateria &operator=(AMateria const &m);
 
     public:
-        AMateria(std::string const & type);
         virtual ~AMateria();
 
         std::string const & getType() const;

@@ -9,7 +9,15 @@ Ice::~Ice()
 {
     
 }
+Ice::Ice(Ice const &c) : AMateria(c.type)
+{
+}
 
+Ice &Ice::operator=(Ice const &c)
+{
+    (void)c;
+    return (*this);
+}
 AMateria* Ice::clone() const
 {
     return (new Ice());

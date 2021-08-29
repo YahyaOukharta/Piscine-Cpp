@@ -39,3 +39,25 @@ AMateria *MateriaSource::createMateria(std::string const & type)
     }
     return (0);
 }
+
+MateriaSource::MateriaSource(MateriaSource const &s)
+{
+    init_mem();
+    for (int i = 0; i < 4; i++)
+    {
+        if (s.memory[i])
+            memory[i] = s.memory[i]->clone();
+    }
+}
+
+MateriaSource &MateriaSource::operator=(MateriaSource const &s)
+{
+    init_mem();
+    for (int i = 0; i < 4; i++)
+    {
+        if (s.memory[i])
+            memory[i] = s.memory[i]->clone();
+    }
+    return (*this);
+}
+        

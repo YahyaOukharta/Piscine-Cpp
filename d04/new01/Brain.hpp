@@ -8,7 +8,10 @@ class Brain
         std::string ideas[100];
 
         Brain();
+        Brain(Brain const &b);
         ~Brain();
+
+        Brain &operator=(Brain const &b);
 };
 
 #endif

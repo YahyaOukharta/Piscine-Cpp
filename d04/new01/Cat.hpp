@@ -15,6 +15,8 @@ class Cat : public Animal
 
         void makeSound() const;
         Brain const *getBrain() const;
+
+        Cat &operator=(Cat const &c);
 };
 
 #endif

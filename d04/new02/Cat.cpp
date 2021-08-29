@@ -30,3 +30,16 @@ Brain const *Cat::getBrain() const
 {
     return brain;
 }
+Cat &Cat::operator=(Cat const &a)
+{   
+    type = a.type;
+    if(brain)
+        delete brain;
+    brain = new Brain(*(a.brain));
+    return (*this);
+}
+
+std::string const Cat::getType() const
+{
+    return (type);
+}
