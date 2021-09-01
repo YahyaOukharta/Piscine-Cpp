@@ -1,18 +1,20 @@
-#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(void)
 {
-    int g = 50;
+    int g = 137;
 
     try
     {
         Bureaucrat b("TEST", g);
         std::cout << b ;
-        Form f("Formulaire", 49, 20);
+        ShrubberyCreationForm f("Hello");
         std::cout << f ;
         b.signForm(f);
-        b.signForm(f);
-        std::cout << f ;
+        b.executeForm(f);
+
     }
     catch(std::exception &e)
     {

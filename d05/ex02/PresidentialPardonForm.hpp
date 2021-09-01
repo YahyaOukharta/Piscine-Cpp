@@ -5,7 +5,7 @@
 # include <string>
 #include "Form.hpp"
 
-class PresidentialPardonForm: public Form
+class PresidentialPardonForm : public Form
 {
 	private:
 		std::string target;
@@ -19,6 +19,7 @@ class PresidentialPardonForm: public Form
 		PresidentialPardonForm &		operator=( PresidentialPardonForm const & rhs );
 
 		std::string getTarget(void) const;
+		void execute(Bureaucrat const &executor) const;
 
 };
 

@@ -58,6 +58,16 @@ void Form::beSigned(Bureaucrat const &b)
 	this->isSigned = 1;
 }
 
+int Form::canExecute(Bureaucrat const & executor) const
+{
+	if (!this->isSigned)
+		throw FormNotSignedForExecutionException;
+	if (executor.getGrade() > this->getExecGrade())
+		throw GradeTooLowException;
+	return (1);
+}
+
+
 Form &				Form::operator=( Form const & rhs )
 {
 	if ( this != &rhs )

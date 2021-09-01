@@ -12,6 +12,15 @@ class FormAlreadySignedExcept: public std::exception
 		return "Form already signed";
 	};
 };
+
+class FormNotSignedForExecutionExcept: public std::exception
+{
+	const char* what() const throw()
+	{
+		return "Form not signed for execution";
+	};
+};
+
 class Form
 {
 	private:
@@ -22,6 +31,8 @@ class Form
 		GradeTooHighExcept GradeTooHighException;
 		GradeTooLowExcept GradeTooLowException;
 		FormAlreadySignedExcept FormAlreadySignedException;
+		FormNotSignedForExecutionExcept FormNotSignedForExecutionException;
+
 	public:
 
 		Form(std::string const &name, int signGrade, int execGrade);
@@ -35,6 +46,10 @@ class Form
 		bool getIsSigned() const;
 
 		void beSigned(Bureaucrat const &b);
+		int canExecute(Bureaucrat const & executor) const;
+		
+		virtual void execute(Bureaucrat const & executor) const = 0;
+		
 };
 
 std::ostream &			operator<<( std::ostream & o, Form const & i );

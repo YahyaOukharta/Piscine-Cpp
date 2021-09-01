@@ -1,6 +1,6 @@
 NAME = a.out
 
-SRCS = Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp main.cpp
+SRCS = Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp main.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp 
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -13,6 +13,7 @@ clean :
 	rm -f *.hpp.gch
 
 fclean : clean
+	rm -f *_shrubbery
 	rm -f $(NAME)
 
 re : fclean all
