@@ -52,6 +52,9 @@ int main(int ac, char **av)
     }
         try
     {
+        if(value == "nan" || value =="nanf")
+            std::cout << "nan" << std::endl;
+
         doubleRes = std::stod(value);
         putDouble(doubleRes, 0);
     }
