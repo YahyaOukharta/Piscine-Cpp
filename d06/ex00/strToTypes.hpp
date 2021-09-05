@@ -11,3 +11,5 @@ float strToDouble(std::string const &str);
 
 void putChar(char c, bool impossible);
 void putInt(int c, bool impossible);
+void putFloat(float n, bool impossible);
+void putDouble(double n, bool impossible);

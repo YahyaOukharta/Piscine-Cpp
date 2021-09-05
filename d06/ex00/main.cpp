@@ -40,11 +40,26 @@ int main(int ac, char **av)
     {
         putInt(intRes, 1);
     }
-    floatRes = std::stof(value);
-    doubleRes = std::stod(value);
-    std::cout << "float: "<< floatRes << std::endl;
-    std::cout << "double: "<< doubleRes << std::endl;
+    
+    try
+    {
+        floatRes = std::stof(value);
+        putFloat(floatRes, 0);
+    }
+    catch(std::exception &e)
+    {
+        putFloat(floatRes, 1);
+    }
+        try
+    {
+        doubleRes = std::stod(value);
+        putDouble(doubleRes, 0);
+    }
+    catch(std::exception &e)
+    {
+        putDouble(doubleRes, 1);
+    }
+
 
     return (0);
-
 }

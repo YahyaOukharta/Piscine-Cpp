@@ -6,24 +6,24 @@ class Base
     private:
 
     public:
-        virtual ~Base() = 0;
-        Base();
+        Base(){};
+        virtual ~Base(){};
 
 };
 
-class A : virtual public Base
+class A :  public Base
 {
     public:
-        A();
-        ~A();    
+        A(){};
+        ~A(){};    
 
 };
 
 class B : public Base
 {
     public:
-        B();
-        ~B();
+        B(){};
+        ~B(){};
 
 
 };
@@ -31,8 +31,8 @@ class B : public Base
 class C : public Base
 {
     public:
-        C();
-        ~C();
+        C(){};
+        ~C(){};
 
 };
 
