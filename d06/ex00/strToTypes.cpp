@@ -22,3 +22,28 @@ float strToDouble(std::string const &str)
     size_t n;
     return (std::stod(str, &n));
 }
+
+void putChar(char c, bool impossible)
+{
+    std::cout <<"char: ";
+    if(impossible)
+        std::cout << "Impossible";
+    else
+    {
+        if(isprint(c))
+            std::cout << "'" << c << "'";
+        else
+            std::cout << "Non displayable";
+    }
+    std::cout << std::endl;
+}
+
+void putInt(int n, bool impossible)
+{
+    std::cout <<"int: ";
+    if(impossible)
+        std::cout << "Impossible";
+    else
+        std::cout << n ;
+    std::cout << std::endl;
+}

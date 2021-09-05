@@ -19,14 +19,31 @@ int main(int ac, char **av)
     double  doubleRes;
 
 
-    intRes = std::stoi(value);
-    charRes = static_cast<char>(intRes);
+    try
+    {
+        intRes = std::stoi(value);
+        charRes = static_cast<char>(intRes);
+        putChar(charRes, 0);
+
+    }
+    catch(std::exception &e)
+    {
+        putChar(charRes, 1);
+    }
+
+    try
+    {
+        intRes = std::stoi(value);
+        putInt(intRes, 0);
+    }
+    catch(std::exception &e)
+    {
+        putInt(intRes, 1);
+    }
     floatRes = std::stof(value);
-    doubleRes = static_cast<double>(intRes);
-    std::cout << intRes << std::endl;
-    std::cout << charRes << std::endl;
-    std::cout << floatRes << std::endl;
-    std::cout << doubleRes << std::endl;
+    doubleRes = std::stod(value);
+    std::cout << "float: "<< floatRes << std::endl;
+    std::cout << "double: "<< doubleRes << std::endl;
 
     return (0);
 
