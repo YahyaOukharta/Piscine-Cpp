@@ -9,6 +9,7 @@ Data* deserialize(uintptr_t raw)
 {
     return(reinterpret_cast<Data *>(raw));
 }
+
 int main(void)
 {
     Data *hello = new Data(10, "Hello World");

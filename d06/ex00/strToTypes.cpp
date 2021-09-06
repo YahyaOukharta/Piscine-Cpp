@@ -56,33 +56,46 @@ float roundd(float var)
     float value = (int)(var * 1000 + .5);
     return (float)value / 100;
 }
-void putFloat(float n, bool impossible)
+void putFloat(float n, bool impossible, std::string value)
 {
     std::cout <<"float: ";
-    if(impossible)
-        std::cout << "Impossible";
+    if(value == "nan" || value =="nanf")
+        std::cout << "nanf";
+    else if(value == "+inf" || value == "-inf"|| value == "+inff" || value == "-inff")
+        std::cout << value[0] << "inff";
     else
     {
-        std::cout << n ;
-        // std::cout << "<"<<roundd(n - (int)n)<< ">" << std::endl;
-        if(roundd(n - (int)n) < 0.001 )
-            std::cout << ".0";
-        std::cout << "f" ;
+        if(impossible || value =="inf")
+            std::cout << "Impossible";
+        else
+        {
+            std::cout << n ;
+            if(roundd(n - (int)n) < 0.001 && n < 1000000 && n > 0.0000999999)
+                std::cout << ".0";
+            std::cout << "f" ;
+        }
     }
     std::cout << std::endl;
 }
 
-void putDouble(double n, bool impossible)
+void putDouble(double n, bool impossible, std::string value)
 {
     std::cout <<"double: ";
-    if(impossible)
-        std::cout << "Impossible";
+    if(value == "nan" || value =="nanf")
+        std::cout << "nan";
+    else if(value == "+inf" || value == "-inf"|| value == "+inff" || value == "-inff")
+        std::cout << value[0] << "inf";
     else
     {
-        std::cout << n ;
-        // std::cout << "<"<<roundd(n - (int)n)<< ">" << std::endl;
-        if(roundd(n - (int)n) < 0.001 )
-            std::cout << ".0";
+        if(impossible || value =="inf")
+        std::cout << "Impossible";
+        else
+        {
+            std::cout << n ;
+            if(roundd(n - (int)n) < 0.001 && n < 1000000 && n > 0.0000999999)
+                std::cout << ".0";
+        }   
     }
+
     std::cout << std::endl;
 }
