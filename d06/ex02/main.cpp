@@ -31,22 +31,24 @@ void identify(Base& p)
         A &tmp = dynamic_cast<A &>(p);
         std::cout << "A" << std::endl;
         (void)tmp;
-    }catch(std::exception &e)
+    }
+    catch(std::exception &e)
     {
         try
         {
             B &tmp = dynamic_cast<B &>(p);
             std::cout << "B" << std::endl;
             (void)tmp;
-
-        }catch(std::exception &e)
+        }
+        catch(std::exception &e)
         {
             try
             {
                 C &tmp = dynamic_cast<C &>(p);
                 std::cout << "C" << std::endl;
                 (void)tmp;
-            }catch(std::exception &e)
+            }
+            catch(std::exception &e)
             {
 
             }
