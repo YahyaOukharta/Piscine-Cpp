@@ -42,7 +42,7 @@ class Array
         }
         ~Array()
         {
-
+            delete elements;
         };
 
         // operators
