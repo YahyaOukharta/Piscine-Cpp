@@ -1,8 +1,8 @@
 NAME = ex01
 
-SRCS = main.cpp 
+SRCS = main.cpp Span.cpp
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
 all : $(NAME)
 
@@ -11,7 +11,7 @@ $(NAME) :
 
 clean :
 	rm -f *.hpp.gch
-
+	rm -rf *.dSYM
 fclean : clean
 	rm -f $(NAME)
 
