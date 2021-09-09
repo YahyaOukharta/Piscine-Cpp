@@ -54,21 +54,24 @@ int Span::getN(void) const
 int Span::shortestSpan(void) 
 {
 	tmp.clear();
-	std::copy(vec.begin(), vec.end(), tmp.begin());
+	for(size_t i = 0; i < size(); i++)
+		tmp.push_back(vec[i]);
 	std::sort(tmp.begin(), tmp.end());
-
-	return n;
+	int minSpan = 2147483647;
+	for ( size_t i = 1; i < tmp.size(); i++)
+	{
+		int sp = tmp[i] - tmp[i - 1];
+		if (sp < minSpan)
+			minSpan = sp;
+	}
+	return minSpan;
 }
 int Span::longestSpan(void) 
 {
 	tmp.clear();
 	for(size_t i = 0; i < size(); i++)
-	{	
-		std::cout << i << std::endl;
 		tmp.push_back(vec[i]);
-	}
 	std::sort(tmp.begin(), tmp.end());
-
 	return (tmp[tmp.size() - 1] - tmp[0]);
 }
 
