@@ -1,6 +1,6 @@
 NAME = ex02
 
-SRCS = main.cpp #MutantStack.cpp
+SRCS = main.cpp MutantStack.cpp
 FLAGS = -Wall -Wextra -Werror #-fsanitize=address -g
 
 all : $(NAME)

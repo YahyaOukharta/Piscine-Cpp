@@ -8,23 +8,22 @@
 
 
 template<typename T>
-class MutantStack :  public std::stack<T>
+class MutantStack:  public std::stack<T>
 {
 	private:
 		std::vector<T> elements;
 	public:
 
-		MutantStack(){ };
-		MutantStack( MutantStack const & src ){(void)src;};
-		~MutantStack(){};
+		MutantStack();
+		MutantStack( MutantStack<T> const & src );
+		~MutantStack();
 
-		MutantStack &		operator=( MutantStack const & rhs ){(void)rhs;return *this;};
+		MutantStack<T> &		operator=( MutantStack const & rhs );
 
-		void push(T e)
-		{
-			elements.push_back(e);
-			std::stack<T>::push(e);
-		}
+		std::vector<T> getContainer();
+
+		void push(T e);
+		void pop();
 
 		class iterator
 		{
@@ -36,24 +35,49 @@ class MutantStack :  public std::stack<T>
 				iterator &		operator=( iterator const & rhs )
 				{
 					ptr = rhs.getPtr();
-					return (*this);
 				}
 
 				T * getPtr(void) const { return ptr; };
 				void setPtr(T * const p) { ptr = p; };
 
-				T&		operator*()
+				T&		operator*(){ return (*ptr); }
+				iterator  operator ++ ()   //prefix
 				{
-					return (*ptr);
+					iterator tmp = *this;
+					ptr++;
+					return tmp;
+				}
+				iterator   operator -- ()    //prefix
+				{
+					iterator tmp = *this;
+					ptr--;
+					return tmp;
+				}
+				iterator   operator ++ (int) //postfix
+				{
+					ptr++;
+					return *this;
+				}
+				iterator   operator -- (int) //postfix
+				{
+					ptr--;
+					return *this;
 				}
 
+				bool   operator == (iterator it) //postfix
+				{
+					return (it.getPtr() == this->getPtr());
+				}
+				bool   operator != (iterator it) //postfix
+				{
+					return (it.getPtr() != this->getPtr());
+				}
 		};
-		MutantStack::iterator begin()
-		{
-			return (MutantStack::iterator(&elements[0]));
-		}
+
+		MutantStack<T>::iterator begin();
+		MutantStack<T>::iterator end();
 };
 
-
+#include "MutantStack.cpp"
 
 #endif /* ***************************************************** MUTANTSTACK_H */
